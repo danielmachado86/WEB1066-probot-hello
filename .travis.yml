@@ -22,9 +22,9 @@ after_success:
   - set -x -v;
     set -e;
     if [ "${NPM_TARGET}" = "test" ]; then
-      docker tag probot-hello probot-hello:$(git rev-parse HEAD)
+      docker tag probot-hello probot-hello:$(git rev-parse HEAD);
     else
-      echo "Skipping the docker tag"
-    fi
+      echo "Skipping the docker tag";
+    fi;
     docker images;
     set +x +v;
